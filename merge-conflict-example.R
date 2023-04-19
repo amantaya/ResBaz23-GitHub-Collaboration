@@ -15,5 +15,5 @@ plot(petal_length, petal_width)
 # simple plot of petal width
 plot(petal_length, petal_width, pch = 2, col = "purple")
 
-# add a linear model
-lm(petal_length ~ petal_width)
+# view a histogram of petal length
+hist(petal_length)

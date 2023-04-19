@@ -179,11 +179,8 @@ git clone https://github.com/amantaya/ResBaz23-GitHub-Collaboration.git
 
 ![](Attachments/Screenshot%202023-04-18%20at%2010.55.58%20AM.png)
 
-{% note %}
-
-**Note:** `git clone` implicitly sets the `origin` remote automatically. ^[https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes]
-
-{% endnote %}
+**Note:**
+`git clone` implicitly sets the `origin` remote automatically. ^[https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes]
 
 ...and then change your current directory to name of the repo
 

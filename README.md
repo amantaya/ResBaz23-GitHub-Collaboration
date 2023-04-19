@@ -179,7 +179,7 @@ git clone https://github.com/amantaya/ResBaz23-GitHub-Collaboration.git
 
 ![](Attachments/Screenshot%202023-04-18%20at%2010.55.58%20AM.png)
 
->**Note:**
+>**Note**
 >`git clone` implicitly sets the `origin` remote automatically. ^[https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes]
 
 ...and then change your current directory to name of the repo
@@ -212,19 +212,19 @@ On GitHub, when another person pushes a commit to the repo, their username is ad
 
 ![](Attachments/Pasted%20image%2020230417164400.png)
 
-> **Note:**
+> **Note**
 > A contributor's username will still show up as being a ***contributor*** *even after being removed as a **collaborator***. Note the use of the term *contributor* vs. *collaborator*. This may be somewhat confusing, just remember that a *collaborator* is someone who has direct access to the repo, and a *contributor* is someone who has contributed code to the repo at some point in time.
 
 ## Download Changes to Code with `git pull`
 
 When you start working for the day, run either `git fetch` or `git pull` to retrieve anything that might have been changed by your collaborator(s) since you last worked on the code.
 
->**Note:**
+>**Note**
 >The `git pull` command is actually two commands: `git fetch` and `git merge`, mean that `git pull` will fetch the code from GitHub (downloading the code) and merge the changes (if any) into your current code on your machine. If there are any merge conflicts, `git pull` will usually fail and print a warning message that the pull could not be completed due to a 'merge conflict'.
 
 A **merge conflict** is when the two people have changed the same line in the same file, or when one person has modified a file while the other person deleted the file. ^[https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts]
 
->**Note:**
+>**Note**
 > You can set your `git config --global pull.rebase true` options to automatically rebase the git repo, rewriting the repo's history on your copy of the git repo when a `git pull` command returns a merge conflict. I would generally not recommend setting this option to `true` unless you are experienced with git and understand how a 'rebase' will affect your git history.
 
 >[!Important]
@@ -270,7 +270,7 @@ For this workshop, we will use the relatively simple GitHub Flow branching strat
 
 GitHub flow is a simple branching strategy where each person creates a new branch typically called `feature` for development. Once the code on the `feature` branch is ready to be integrated into the `main` branch, the person submits a *Pull Request* for others to review. During the pull request, others can discuss the proposed changes and make any necessary edits to the files. Once the pull request has been approved, the code from the `feature` branch is merged back into the `main` branch, and the feature branch is typically deleted.
 
->**Note:**
+>**Note**
 > I set up a branch protection rule to prevent users directly pushing commits to the `main` branch on GitHub. Branch prtoection rules can be helpful to ensure code is reviewed before it enters production ^[https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches]
 
 First we will create a new branch called `andrew/feature`. The `-c` flag creates a new branch called `andrew/feature` and the `git switch` command changes your current branch to this new branch.

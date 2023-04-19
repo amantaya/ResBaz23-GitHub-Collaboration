@@ -88,13 +88,13 @@ git add somecode.R
 
 ![](Attachments/Screenshot%202023-04-17%20at%204.13.21%20PM.png)
 
-You can also click the checkbox in the **Git** pane on the top-right of R Studio. If you do that, R Studio will run `git add` in the background for you to add that file to version control. 
+You can also click the checkbox in the **Git** pane on the top-right of R Studio. If you do that, R Studio will run `git add` in the background for you to add that file to version control.
 
-What does that small green "A" ![](Attachments/Screenshot%202023-04-17%20at%204.19.18%20PM.png) icon next to `somecode.R` mean? It means `somecode.R` was added to version control (literally R Studio ran `git add somecode.R` in the background for you). 
+What does that small green "A" ![](Attachments/Screenshot%202023-04-17%20at%204.19.18%20PM.png) icon next to `somecode.R` mean? It means `somecode.R` was added to version control (literally R Studio ran `git add somecode.R` in the background for you).
 
 ![](Attachments/Screenshot%202023-04-17%20at%204.18.51%20PM.png)
 
-Now we run the `git commit -m` command with an admittedly not very informative commit message. The `-m` flag and the `"added some R code"` is the commit title, sometimes called the commit message. Try to keep the commit title at about 50 characters but feel free to hit enter after the commit title and add a description to the commit, keeping every subsequent line around 72 characters (i.e. the 50/72 rule) ^[https://dev.to/noelworden/improving-your-commit-message-with-the-50-72-rule-3g79]. 
+Now we run the `git commit -m` command with an admittedly not very informative commit message. The `-m` flag and the `"added some R code"` is the commit title, sometimes called the commit message. Try to keep the commit title at about 50 characters but feel free to hit enter after the commit title and add a description to the commit, keeping every subsequent line around 72 characters (i.e. the 50/72 rule) ^[https://dev.to/noelworden/improving-your-commit-message-with-the-50-72-rule-3g79].
 
 ```Shell
 git commit -m "added some R code"
@@ -114,7 +114,7 @@ git status
 
 Remember that `origin/main` refers to the remote tracking branch `origin` on GitHub. `On branch main` is the name of the branch we are currently on with our local git repo (more on branches later...).
 
-Then we can run `git push` command to push our local branch to GitHub. 
+Then we can run `git push` command to push our local branch to GitHub.
 
 ```Shell
 git push
@@ -128,9 +128,9 @@ There are two primary ways for someone other than yourself to interact with your
 
 The first way is by adding someone to your GitHub repo as a *Collaborator*. This is perhaps the most straightforward way to grant someone access to your repository.
 
-A *Collaborator* is someone with a GitHub account that you give permission to read and write access to your code on GitHub. You can add a collaborator to a Public or Private repository on GitHub ^[https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository]. 
+A *Collaborator* is someone with a GitHub account that you give permission to read and write access to your code on GitHub. You can add a collaborator to a Public or Private repository on GitHub ^[https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository].
 
-The second way is when someone *forks* your GitHub repo. A *fork* is when someone has their own entire copy of your repo, but doesn't have direct write access your repo ^[https://docs.github.com/en/get-started/quickstart/fork-a-repo]. That person makes changes to their copy of your code and then can submit a *Pull Request* to propose changes to your code. Pull Requests can be useful to allow people outside your team to contribute code without them having direct write access to your code. Merging code from a Pull Request is completely optional ^[https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests]. 
+The second way is when someone *forks* your GitHub repo. A *fork* is when someone has their own entire copy of your repo, but doesn't have direct write access your repo ^[https://docs.github.com/en/get-started/quickstart/fork-a-repo]. That person makes changes to their copy of your code and then can submit a *Pull Request* to propose changes to your code. Pull Requests can be useful to allow people outside your team to contribute code without them having direct write access to your code. Merging code from a Pull Request is completely optional ^[https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests].
 
 >[!Important]
 >A personal GitHub account doesn't give you much control over what a collaborator can edit and potentially delete. Be very careful to grant access to only those people who you trust with your code. An Enterprise GitHub account gives the repository owner more control over who can edit parts of the code, but of course an Enterprise accounts costs a monthly subscription. I don't have an Enterprise account and you may not either, so we will proceed with caution on who we add as *collaborators* to each of our GitHub repos.
@@ -141,7 +141,7 @@ To add someone as a collaborator, click the Settings icon.
 
 ![](Attachments/Pasted%20image%2020230417142605.png)
 
-The **Collaborators** section is where you can add GitHub users to access *this specific GitHub repo*. Each repo has it's own list of collaborators, or even no collaborators if you want to be the only person writing the code. 
+The **Collaborators** section is where you can add GitHub users to access *this specific GitHub repo*. Each repo has it's own list of collaborators, or even no collaborators if you want to be the only person writing the code.
 
 ![](Attachments/Pasted%20image%2020230417143147.png)
 
@@ -149,7 +149,7 @@ When you invite someone to be a collaborator, they will receive a notification a
 
 ![](Attachments/Pasted%20image%2020230417144256.png)
 
-The person you want to add as a collaborator will need to accept the invitation. 
+The person you want to add as a collaborator will need to accept the invitation.
 
 ![](Attachments/Pasted%20image%2020230417144355.png)
 
@@ -157,16 +157,16 @@ Once that person accepts the invitation, they will see a banner that says "You n
 
 ![](Attachments/Pasted%20image%2020230417145134.png)
 
-You can check who has access to your repository by checking that *Collaborators* section under the *Settings*. You can also remove people from accessing your repository by clicking the "remove" button next to their username. 
+You can check who has access to your repository by checking that *Collaborators* section under the *Settings*. You can also remove people from accessing your repository by clicking the "remove" button next to their username.
 
 ![](Attachments/Pasted%20image%2020230417145520.png)
 
 In R Studio, open the **terminal** (not the R console). The **terminal** runs a shell of the operating system, allowing the user to interface with the operating system through a command line interface.
 
 >[!Help]
->Shells can come in many different types, such as Zsh (MacOS), bash (Linux) or PowerShell (Windows). These shells are not mutually exclusive, you can have multiple shells on single computer. 
+>Shells can come in many different types, such as Zsh (MacOS), bash (Linux) or PowerShell (Windows). These shells are not mutually exclusive, you can have multiple shells on single computer.
 
-In the example below, we are using bash to run these commands. I highly recommend downloading [git bash](https://git-scm.com/downloads) especially if you are a Windows user, as some of these commands might not work in PowerShell. 
+In the example below, we are using bash to run these commands. I highly recommend downloading [git bash](https://git-scm.com/downloads) especially if you are a Windows user, as some of these commands might not work in PowerShell.
 
 ![](Attachments/Screenshot%202023-04-17%20at%203.43.08%20PM.png)
 
@@ -178,7 +178,7 @@ git clone https://github.com/amantaya/ResBaz23-GitHub-Collaboration.git
 
 ![](Attachments/Screenshot%202023-04-18%20at%2010.55.58%20AM.png)
 
->[!Note]
+>**Note:**
 >`git clone` implicitly sets the `origin` remote automatically. ^[https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes]
 
 ...and then change your current directory to name of the repo
@@ -195,7 +195,7 @@ git remote -v
 
 ![](Attachments/Screenshot%202023-04-17%20at%203.58.03%20PM.png)
 
-The `-v` flag means 'verbose' output - git will print the remote's shortname (in our case `origin`) and the URL of `origin` which is `https://github.com/amantaya/ResBaz23-GitHub-Collaboration.git`. 
+The `-v` flag means 'verbose' output - git will print the remote's shortname (in our case `origin`) and the URL of `origin` which is `https://github.com/amantaya/ResBaz23-GitHub-Collaboration.git`.
 
 I find the `git remote -v` very helpful to figure out where the commit would go (or try to go - it may get rejected if you don't have write permission) if you were to push the commit to GitHub.
 
@@ -211,19 +211,19 @@ On GitHub, when another person pushes a commit to the repo, their username is ad
 
 ![](Attachments/Pasted%20image%2020230417164400.png)
 
- >[!Note]
+ >**Note:**
  >A contributor's username will still show up as being a ***contributor*** *even after being removed as a **collaborator***. Note the use of the term *contributor* vs. *collaborator*. This may be somewhat confusing, just remember that a *collaborator* is someone who has direct access to the repo, and a *contributor* is someone who has contributed code to the repo at some point in time.
 
 ## Download Changes to Code with `git pull`
 
-When you start working for the day, run either `git fetch` or `git pull` to retrieve anything that might have been changed by your collaborator(s) since you last worked on the code. 
+When you start working for the day, run either `git fetch` or `git pull` to retrieve anything that might have been changed by your collaborator(s) since you last worked on the code.
 
->[!Note]
->The `git pull` command is actually two commands: `git fetch` and `git merge`, mean that `git pull` will fetch the code from GitHub (downloading the code) and merge the changes (if any) into your current code on your machine. If there are any merge conflicts, `git pull` will usually fail and print a warning message that the pull could not be completed due to a 'merge conflict'. 
+>**Note:**
+>The `git pull` command is actually two commands: `git fetch` and `git merge`, mean that `git pull` will fetch the code from GitHub (downloading the code) and merge the changes (if any) into your current code on your machine. If there are any merge conflicts, `git pull` will usually fail and print a warning message that the pull could not be completed due to a 'merge conflict'.
 
 A **merge conflict** is when the two people have changed the same line in the same file, or when one person has modified a file while the other person deleted the file. ^[https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts]
 
-> [!Note]
+> **Note:**
 > You can set your `git config --global pull.rebase true` options to automatically rebase the git repo, rewriting the repo's history on your copy of the git repo when a `git pull` command returns a merge conflict. I would generally not recommend setting this option to `true` unless you are experienced with git and understand how a 'rebase' will affect your git history.
 
 >[!Important]
@@ -237,7 +237,7 @@ git fetch
 
 ![](Attachments/Pasted%20image%2020230417194218.png)
 
-When we run the `git pull` command, it fetches any changes from GitHub, and then merges those changes into your local copy of the code. `git pull` ***does*** automatically try to merge the changes to the code and is my preferred method. 
+When we run the `git pull` command, it fetches any changes from GitHub, and then merges those changes into your local copy of the code. `git pull` ***does*** automatically try to merge the changes to the code and is my preferred method.
 
 ```Shell
 git pull
@@ -245,21 +245,21 @@ git pull
 
 ![](Attachments/Pasted%20image%2020230417195025.png)
 
-Notice that git tells us what has changed, namely 2 files called `somecode.R` and `somemorecode.R`. Git also tells us that 7 lines of code were inserted into `somemorecode.R`. 
+Notice that git tells us what has changed, namely 2 files called `somecode.R` and `somemorecode.R`. Git also tells us that 7 lines of code were inserted into `somemorecode.R`.
 
 Also notice git tells us it used the *fast-forward* method of merging two branches. The fast-forward method is where your local branch has the commits from your collaborator added to your branch's commit history (in this case a branch is from each person and each person's branch is called main - yes, it get's confusing fast), and then git brings you to the most recent commit on your current the branch called the HEAD. ^[https://blog.mergify.com/what-is-a-git-merge-fast-forward/]
 
-## Writing Code Collaboratively 
+## Writing Code Collaboratively
 
 Writing code collaboratively can be very challenging. Collaborators need to agree on a unified coding style and way of approaching problems. Fortunately, there are an abundance of tools such as linters to enforce coding styles, and strategies for dealing with *merge conflicts*.
 
 When you write code collaboratively with another person, you do so *asynchronously*, that is you work with your local copy of the code and the other person(s) works with their own local copy of the code. Only when you push or pull from a remote such as GitHub do the copies of the version history meet and git tries to reconcile the versions for each file.
 
-Working asynchronously comes with freedom to work independently, but also comes at the cost of dealing with conflicting versions of files and their version histories. 
+Working asynchronously comes with freedom to work independently, but also comes at the cost of dealing with conflicting versions of files and their version histories.
 
-When git cannot automatically merge the different histories of the same file, then you have a *merge conflict* ^[https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts]. Merge conflicts typically require human intervention to decide what parts of the code to keep. 
+When git cannot automatically merge the different histories of the same file, then you have a *merge conflict* ^[https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts]. Merge conflicts typically require human intervention to decide what parts of the code to keep.
 
-One strategy to avoid merge conflicts is by using a DevOps Branching Strategy ^[https://www.bmc.com/blogs/devops-branching-strategies/]. This is a huge topic and the source of considerable debate. 
+One strategy to avoid merge conflicts is by using a DevOps Branching Strategy ^[https://www.bmc.com/blogs/devops-branching-strategies/]. This is a huge topic and the source of considerable debate.
 
 For this workshop, we will use the relatively simple GitHub Flow branching strategy ^[https://www.geeksforgeeks.org/git-flow-vs-github-flow/#].
 
@@ -267,12 +267,12 @@ For this workshop, we will use the relatively simple GitHub Flow branching strat
 
 ![](Attachments/GitHubFlow.png) Credit ^[https://media.geeksforgeeks.org/wp-content/uploads/20220214111138/GitHubFlow.jpg]
 
-GitHub flow is a simple branching strategy where each person creates a new branch typically called `feature` for development. Once the code on the `feature` branch is ready to be integrated into the `main` branch, the person submits a *Pull Request* for others to review. During the pull request, others can discuss the proposed changes and make any necessary edits to the files. Once the pull request has been approved, the code from the `feature` branch is merged back into the `main` branch, and the feature branch is typically deleted. 
+GitHub flow is a simple branching strategy where each person creates a new branch typically called `feature` for development. Once the code on the `feature` branch is ready to be integrated into the `main` branch, the person submits a *Pull Request* for others to review. During the pull request, others can discuss the proposed changes and make any necessary edits to the files. Once the pull request has been approved, the code from the `feature` branch is merged back into the `main` branch, and the feature branch is typically deleted.
 
->[!Note]
+>**Note:**
 >I set up a branch protection rule to prevent users directly pushing commits to the `main` branch on GitHub. Branch prtoection rules can be helpful to ensure code is reviewed before it enters production ^[https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches]
 
-First we will create a new branch called `andrew/feature`. The `-c` flag creates a new branch called `andrew/feature` and the `git switch` command changes your current branch to this new branch. 
+First we will create a new branch called `andrew/feature`. The `-c` flag creates a new branch called `andrew/feature` and the `git switch` command changes your current branch to this new branch.
 
 ```Shell
 git switch -c andrew/feature
@@ -280,7 +280,7 @@ git switch -c andrew/feature
 
 ![](Attachments/Pasted%20image%2020230418135710.png)
 
-I named the branch `andrew/feature` so I know who is working on that branch and what it's for (i.e. to develop a new feature). 
+I named the branch `andrew/feature` so I know who is working on that branch and what it's for (i.e. to develop a new feature).
 You can also create a new branch using the Git pane in R Studio by clicking the ![](Attachments/Pasted%20image%2020230418140017.png) button.
 
 ![](Attachments/Pasted%20image%2020230418135948.png)
@@ -289,7 +289,7 @@ Next, edit the file `merge-conflict-example.R`  on line 16. Change `pch = 1` and
 
 ![](Attachments/Pasted%20image%2020230418140237.png)
 
-Then we need stage `merge-conflict-example.R` by running `git add merge-conflict-example.R` in the terminal, or clicking the checkbox next under the "Staged" column in the Git pane in R Studio. 
+Then we need stage `merge-conflict-example.R` by running `git add merge-conflict-example.R` in the terminal, or clicking the checkbox next under the "Staged" column in the Git pane in R Studio.
 
 ![](Attachments/Pasted%20image%2020230418140444.png)
 
@@ -321,23 +321,23 @@ We will hit that green button to open a pull request to merge our proposed chang
 
 ![](Attachments/Pasted%20image%2020230418141158.png)
 
-When you open a pull request on GitHub, GitHub will automatically determine if the pull request can be merged, or if it can't because of a merge conflict. 
+When you open a pull request on GitHub, GitHub will automatically determine if the pull request can be merged, or if it can't because of a merge conflict.
 
-Everything looks good, so we will hit the button "Create pull request". 
+Everything looks good, so we will hit the button "Create pull request".
 
 ![](Attachments/Pasted%20image%2020230418141814.png)
 
-Because of the branch protection rules, at least 1 approving review is required by a reviewer with write access. 
+Because of the branch protection rules, at least 1 approving review is required by a reviewer with write access.
 
 The "Conversation" tab is a great place to discuss why the change to the code has taken place.
 
 ![](Attachments/Pasted%20image%2020230418142051.png)
 
-There is a ton of useful information in the other tabs "Commits", "Checks", and "Files Changed." I would recommend you look at each tab. 
+There is a ton of useful information in the other tabs "Commits", "Checks", and "Files Changed." I would recommend you look at each tab.
 
 For example, under the "Checks" tab you can use a GitHub Action to run the `lintr` R package to enforce a unified coding style. If the check doesn't pass, then the pull request shouldn't be merged.
 
-Under the "Files changed" tab, you can see exactly what has changed for each file included in the pull request. GitHub also helpfully highlights the exact parts of the line that have changed. 
+Under the "Files changed" tab, you can see exactly what has changed for each file included in the pull request. GitHub also helpfully highlights the exact parts of the line that have changed.
 
 ![](Attachments/Pasted%20image%2020230418142433.png)
 
@@ -349,19 +349,19 @@ Once the pull request is approved, it can be merged into the `main` branch and t
 
 ![](Attachments/Pasted%20image%2020230418143227.png)
 
-You should now see on the main page for the repo a commit with "Merge pull request #1 from amantaya/andrew/feature". 
+You should now see on the main page for the repo a commit with "Merge pull request #1 from amantaya/andrew/feature".
 
 ![](Attachments/Pasted%20image%2020230418143421.png)
 
 ## Dealing with Merge Conflicts
 
-Perhaps the hardest part in collaborating on code with Git/GitHub is when there are merge conflicts. 
+Perhaps the hardest part in collaborating on code with Git/GitHub is when there are merge conflicts.
 
-When git cannot automatically merge the different histories of the same file, then you have a *merge conflict* ^[https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts]. 
+When git cannot automatically merge the different histories of the same file, then you have a *merge conflict* ^[https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts].
 
 ### Creating a Merge Conflict Example
 
-We will have to create a merge conflict to demonstrate how to resolve a merge conflict. 
+We will have to create a merge conflict to demonstrate how to resolve a merge conflict.
 
 First, we will need to switch back to the `main` branch and pull those changes we made on GitHub into our local copy of the code.
 
@@ -402,7 +402,7 @@ lm(petal_length ~ petal_width)
 
 ![](Attachments/Pasted%20image%2020230418180054.png)
 
-Stage and commit the file, adding a descriptive commit message. 
+Stage and commit the file, adding a descriptive commit message.
 
 ```Shell
 git add merge-conflict-example.R

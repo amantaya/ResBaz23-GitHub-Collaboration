@@ -16,7 +16,7 @@ To create a new git repository from scratch, run the `git init` command with nam
 git init <repo name>
 ```
 
-Because we created this project from a local terminal, it currently only exists on our local computer and doesn't yet exist on GitHub. We need to add a location to put this repo on GitHub, and we do this by running the `git remote add` command. Here we can change the name `<origin>` to anything we want, `<origin>` is a 'shortname' for the git repo on GitHub [^https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes]. Git uses shortnames as an alias for the URL of the repo. This is helpful so we don't have to type the URL every time we want to push (upload) our code to GitHub. Here we replace the `<URL>` with the URL for the repo on GitHub, e.g.  `https://github.com/<username>/<repo>`
+Because we created this project from a local terminal, it currently only exists on our local computer and doesn't yet exist on GitHub. We need to add a location to put this repo on GitHub, and we do this by running the `git remote add` command. Here we can change the name `<origin>` to anything we want, `<origin>` is a 'shortname' for the git repo on GitHub [^1]. Git uses shortnames as an alias for the URL of the repo. This is helpful so we don't have to type the URL every time we want to push (upload) our code to GitHub. Here we replace the `<URL>` with the URL for the repo on GitHub, e.g.  `https://github.com/<username>/<repo>`
 
 ```Shell
 git remote add <shortname> <URL>
@@ -474,3 +474,5 @@ Open a pull request on GitHub when you are ready to merge your changes into the 
 Create new branches as needed with `git switch -c <branch_name>`.
 
 ## References
+
+[^1]: https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes

@@ -66,6 +66,7 @@ touch somecode.R
 ```
 
 >**Note**
+>
 >The `touch` command does not work in PowerShell. Be sure to use a different shell, such as Bash or Zsh.
 >![](Attachments/Pasted%20image%2020230417192246.png)
 
@@ -133,8 +134,9 @@ A *Collaborator* is someone with a GitHub account that you give permission to re
 
 The second way is when someone *forks* your GitHub repo. A *fork* is when someone has their own entire copy of your repo, but doesn't have direct write access your repo ^[https://docs.github.com/en/get-started/quickstart/fork-a-repo]. That person makes changes to their copy of your code and then can submit a *Pull Request* to propose changes to your code. Pull Requests can be useful to allow people outside your team to contribute code without them having direct write access to your code. Merging code from a Pull Request is completely optional ^[https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests].
 
-> **Danger**
-> A personal GitHub account doesn't give you much control over what a collaborator can edit and potentially delete. Be very careful to grant access to only those people who you trust with your code. An Enterprise GitHub account gives the repository owner more control over who can edit parts of the code, but of course an Enterprise accounts costs a monthly subscription. I don't have an Enterprise account and you may not either, so we will proceed with caution on who we add as *collaborators* to each of our GitHub repos.
+>**Warning**
+>
+>A personal GitHub account doesn't give you much control over what a collaborator can edit and potentially delete. Be very careful to grant access to only those people who you trust with your code. An Enterprise GitHub account gives the repository owner more control over who can edit parts of the code, but of course an Enterprise accounts costs a monthly subscription. I don't have an Enterprise account and you may not either, so we will proceed with caution on who we add as *collaborators* to each of our GitHub repos.
 
 For this workshop, we will be adding people as collaborators.
 
@@ -165,6 +167,7 @@ You can check who has access to your repository by checking that *Collaborators*
 In R Studio, open the **terminal** (not the R console). The **terminal** runs a shell of the operating system, allowing the user to interface with the operating system through a command line interface.
 
 >**Note**
+>
 >Shells can come in many different types, such as Zsh (MacOS), bash (Linux) or PowerShell (Windows). These shells are not mutually exclusive, you can have multiple shells on single computer.
 
 In the example below, we are using bash to run these commands. I highly recommend downloading [git bash](https://git-scm.com/downloads) especially if you are a Windows user, as some of these commands might not work in PowerShell.
@@ -180,6 +183,7 @@ git clone https://github.com/amantaya/ResBaz23-GitHub-Collaboration.git
 ![](Attachments/Screenshot%202023-04-18%20at%2010.55.58%20AM.png)
 
 >**Note**
+>
 >`git clone` implicitly sets the `origin` remote automatically. ^[https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes]
 
 ...and then change your current directory to name of the repo
@@ -213,6 +217,7 @@ On GitHub, when another person pushes a commit to the repo, their username is ad
 ![](Attachments/Pasted%20image%2020230417164400.png)
 
 > **Note**
+>
 > A contributor's username will still show up as being a ***contributor*** *even after being removed as a **collaborator***. Note the use of the term *contributor* vs. *collaborator*. This may be somewhat confusing, just remember that a *collaborator* is someone who has direct access to the repo, and a *contributor* is someone who has contributed code to the repo at some point in time.
 
 ## Download Changes to Code with `git pull`
@@ -220,14 +225,17 @@ On GitHub, when another person pushes a commit to the repo, their username is ad
 When you start working for the day, run either `git fetch` or `git pull` to retrieve anything that might have been changed by your collaborator(s) since you last worked on the code.
 
 >**Note**
+>
 >The `git pull` command is actually two commands: `git fetch` and `git merge`, mean that `git pull` will fetch the code from GitHub (downloading the code) and merge the changes (if any) into your current code on your machine. If there are any merge conflicts, `git pull` will usually fail and print a warning message that the pull could not be completed due to a 'merge conflict'.
 
 A **merge conflict** is when the two people have changed the same line in the same file, or when one person has modified a file while the other person deleted the file. ^[https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts]
 
 >**Note**
+>
 > You can set your `git config --global pull.rebase true` options to automatically rebase the git repo, rewriting the repo's history on your copy of the git repo when a `git pull` command returns a merge conflict. I would generally not recommend setting this option to `true` unless you are experienced with git and understand how a 'rebase' will affect your git history.
 
 >**Warning**
+>
 >If your collaborator is working on the code synchronously (at the same time as you), have each collaborator run `git push` and then `git pull` frequently to synchronize the changes in code. This will also help detect merge conflicts early before they become big problems.
 
 Running `git fetch` retrieves the references from the remote, in our case the remote is GitHub. References are what git uses to track the changes to each file and uses to keep a version history for each file. `git fetch` ***does not*** automatically try to merge the changes.
@@ -271,6 +279,7 @@ For this workshop, we will use the relatively simple GitHub Flow branching strat
 GitHub flow is a simple branching strategy where each person creates a new branch typically called `feature` for development. Once the code on the `feature` branch is ready to be integrated into the `main` branch, the person submits a *Pull Request* for others to review. During the pull request, others can discuss the proposed changes and make any necessary edits to the files. Once the pull request has been approved, the code from the `feature` branch is merged back into the `main` branch, and the feature branch is typically deleted.
 
 >**Note**
+>
 > I set up a branch protection rule to prevent users directly pushing commits to the `main` branch on GitHub. Branch prtoection rules can be helpful to ensure code is reviewed before it enters production ^[https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches]
 
 First we will create a new branch called `andrew/feature`. The `-c` flag creates a new branch called `andrew/feature` and the `git switch` command changes your current branch to this new branch.
@@ -445,6 +454,7 @@ Notice that we deleted the linear model on lines 21-24 and kept the histogram.
 There is helpful video on dealing with merge conflicts in R [here](https://youtu.be/97m0N4zIvOs)
 
 >**Warning**
+>
 >Git will tell you where the merge conflicts are, but you and your collaborators will have to decide what code to keep.
 
 >[!Pro Tip]

@@ -36,19 +36,19 @@ git remote -v
 
 Depending on how you initialized your git repo, you may need to tell git to track changes for your local branch, and associate those changes with a remote branch on GitHub. In the example below, `origin/main` is the name of the remote (`origin` - which is the shortname for the URL on GitHub) and the remote branch is `main`. The name of our local branch is also `main`.
 
-I found this diagram very helpful to understand the differences between local branches and remote branches.
+### Upstream Branches Explained
 
 ![](Attachments/upstream-1-1170x802.png)
 Credit: DevConnected[^2]
 
-It can be somewhat confusing having a remote branch and local branch with the same name. Just remeber that you are most likely working with a local branch names `main` and then pushing your commands to the remote tracking branch also called `main`. Branching strategies for [DevOps](https://www.atlassian.com/devops) workflows are numerous and can be complicated [^3].
+It can be somewhat confusing having a remote branch and local branch with the same name. Just remember that you are most likely working with a local branch names `main` and then pushing your commands to the remote tracking branch also called `main`. Branching strategies for [DevOps](https://www.atlassian.com/devops) workflows are numerous and can be complicated [^3].
 
 I would recommend setting this up once and keep the names of the local and remote branches the same, and then not thinking about which is which again to save your brain from hurting (or at least mines does when I think about it for too long). Here we set the 'upstream' branch (the remote tracking branch) to `origin/main`.
 
 ```Shell
 git branch --set-upstream-to=origin/main main
 ```
-
+Output:
 ![](Attachments/Pasted%20image%2020230417110356.png)
 
 Th `git branch -a` command can be useful to print out a list of branches both local and remote branches. The `-a` flag tells git to list all of the branches, both local and remote. Omitting the `-a` causes git to print only your local branches [^4].
@@ -57,6 +57,7 @@ Th `git branch -a` command can be useful to print out a list of branches both lo
 git branch -a
 ```
 
+Output:
 ![](Attachments/Pasted%20image%2020230417111853.png)
 
 Next, let's create a new file called `somecode.R` and try pushing that code to GitHub to test if we set up our remote correctlu. The `touch` command creates a new file with the `.R` file extension.
@@ -87,12 +88,14 @@ We need to add the new file to git so git knows to start tracking this file in v
 ```Shell
 git add somecode.R
 ```
-
+Output:
 ![](Attachments/Screenshot%202023-04-17%20at%204.13.21%20PM.png)
 
 You can also click the checkbox in the **Git** pane on the top-right of R Studio. If you do that, R Studio will run `git add` in the background for you to add that file to version control.
 
-What does that small green "A" ![](Attachments/Screenshot%202023-04-17%20at%204.19.18%20PM.png) icon next to `somecode.R` mean? It means `somecode.R` was added to version control (literally R Studio ran `git add somecode.R` in the background for you).
+What does that small green "A" ![](Attachments/Screenshot%202023-04-17%20at%204.19.18%20PM.png) icon next to `somecode.R` mean?
+
+It means `somecode.R` was added to version control (literally R Studio ran `git add somecode.R` in the background for you).
 
 ![](Attachments/Screenshot%202023-04-17%20at%204.18.51%20PM.png)
 
@@ -112,6 +115,7 @@ If we run `git status` again in the terminal, we see that our branch is ahead of
 git status
 ```
 
+Output:
 ![](Attachments/Screenshot%202023-04-17%20at%204.29.56%20PM.png)
 
 Remember that `origin/main` refers to the remote tracking branch `origin` on GitHub. `On branch main` is the name of the branch we are currently on with our local git repo (more on branches later...).
@@ -122,6 +126,7 @@ Then we can run `git push` command to push our local branch to GitHub.
 git push
 ```
 
+Output:
 ![](Attachments/Screenshot%202023-04-17%20at%204.34.14%20PM.png)
 
 ## Collaborators vs. Forks
@@ -180,6 +185,7 @@ To contribute code to a GitHub repository, the collaborator will need to `git cl
 git clone https://github.com/amantaya/ResBaz23-GitHub-Collaboration.git
 ```
 
+Output:
 ![](Attachments/Screenshot%202023-04-18%20at%2010.55.58%20AM.png)
 
 >**Note**
@@ -198,6 +204,7 @@ The collaborator can check if the remote (GitHub) is pointing to the correct Git
 git remote -v
 ```
 
+Output:
 ![](Attachments/Screenshot%202023-04-17%20at%203.58.03%20PM.png)
 
 The `-v` flag means 'verbose' output - git will print the remote's shortname (in our case `origin`) and the URL of `origin` which is `https://github.com/amantaya/ResBaz23-GitHub-Collaboration.git`.
@@ -210,6 +217,7 @@ What happens if you try to push a commit to a repo don't have read and write acc
 
 The commit gets rejected.
 
+Output:
 ![](Attachments/Screenshot%202023-04-17%20at%207.03.57%20PM.png)
 
 On GitHub, when another person pushes a commit to the repo, their username is added to a *Contributors* section at the lower right of the main repo page.
@@ -244,6 +252,7 @@ Running `git fetch` retrieves the references from the remote, in our case the re
 git fetch
 ```
 
+Output:
 ![](Attachments/Pasted%20image%2020230417194218.png)
 
 When we run the `git pull` command, it fetches any changes from GitHub, and then merges those changes into your local copy of the code. `git pull` ***does*** automatically try to merge the changes to the code and is my preferred method.
@@ -252,6 +261,7 @@ When we run the `git pull` command, it fetches any changes from GitHub, and then
 git pull
 ```
 
+Output:
 ![](Attachments/Pasted%20image%2020230417195025.png)
 
 Notice that git tells us what has changed, namely 2 files called `somecode.R` and `somemorecode.R`. Git also tells us that 7 lines of code were inserted into `somemorecode.R`.
@@ -287,11 +297,12 @@ First we will create a new branch called `andrew/feature`. The `-c` flag creates
 ```Shell
 git switch -c andrew/feature
 ```
-
+Output:
 ![](Attachments/Pasted%20image%2020230418135710.png)
 
 I named the branch `andrew/feature` so I know who is working on that branch and what it's for (i.e. to develop a new feature).
 You can also create a new branch using the Git pane in R Studio by clicking the ![](Attachments/Pasted%20image%2020230418140017.png) button.
+
 
 ![](Attachments/Pasted%20image%2020230418135948.png)
 
@@ -321,6 +332,7 @@ However, before we can push our changes to GitHub, we need to add the branch we 
 git push --set-upstream origin andrew/feature
 ```
 
+Output:
 ![](Attachments/Pasted%20image%2020230418141110.png)
 
 ## Comparing and Discussing Changes to Code
@@ -393,6 +405,7 @@ We can remove the reference to the non-existing remote  `andrew/feature` by runn
 git remote prune origin
 ```
 
+Output:
 ![](Attachments/Pasted%20image%2020230418144606.png)
 
 Now let's create a new branch called `feature`.
@@ -401,6 +414,7 @@ Now let's create a new branch called `feature`.
 git switch -c feature
 ```
 
+Output:
 ![](Attachments/Pasted%20image%2020230418171734.png)
 
 And open up the file `merge-conflict-example.R` again and this time edit line 18 and 19.
@@ -437,7 +451,7 @@ Now, have someone else try to add a histogram on line 18 and 19 of `merge-confli
 hist(petal_length)
 ```
 
-Now when you `git pull` you receive an error message "Automatic merge failed; fix conflicts and then commit the result".
+Now when your collaborator uses `git pull` they will receive an error message "Automatic merge failed; fix conflicts and then commit the result".
 
 ![](Attachments/Screenshot%202023-04-18%20at%206.10.09%20PM.png)
 
@@ -457,10 +471,11 @@ There is helpful video on dealing with merge conflicts in R [here](https://youtu
 >
 >Git will tell you where the merge conflicts are, but you and your collaborators will have to decide what code to keep.
 
->[!Pro Tip]
+>**Note**
+>
 >If you ever run into problems with your git repo, I would highly recommend that your create a copy of your repo with `git clone --mirror` which downloads and creates a local copy of your git repo without the files, but keeps all of the history and references ('refs' in git terminology). This way you can try a series of troubleshooting steps (and potentially making mistakes along the way) to achieve your desired outcome in a safe way.
 
-## Typical Workflow
+## Example Typical Workflow for Collaborating on Code
 
 1. Start work for the day, first thing you should do is `git pull`.
 2. Address any merge conflicts from the git pull.

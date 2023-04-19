@@ -36,9 +36,10 @@ git remote -v
 
 Depending on how you initialized your git repo, you may need to tell git to track changes for your local branch, and associate those changes with a remote branch on GitHub. In the example below, `origin/main` is the name of the remote (`origin` - which is the shortname for the URL on GitHub) and the remote branch is `main`. The name of our local branch is also `main`.
 
-I found this diagram very helpful to understand the differences between local branches and remote branches. ^[https://devconnected.com/how-to-set-upstream-branch-on-git/]
+I found this diagram very helpful to understand the differences between local branches and remote branches.
 
 ![](Attachments/upstream-1-1170x802.png)
+Credit: ^[https://devconnected.com/how-to-set-upstream-branch-on-git/]
 
 It can be somewhat confusing having a remote branch and local branch with the same name. Just remeber that you are most likely working with a local branch names `main` and then pushing your commands to the remote tracking branch also called `main`. Branching strategies for [DevOps](https://www.atlassian.com/devops) workflows are numerous and can be complicated ^[https://www.bmc.com/blogs/devops-branching-strategies/].
 

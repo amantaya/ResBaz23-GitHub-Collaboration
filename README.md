@@ -133,7 +133,7 @@ A *Collaborator* is someone with a GitHub account that you give permission to re
 
 The second way is when someone *forks* your GitHub repo. A *fork* is when someone has their own entire copy of your repo, but doesn't have direct write access your repo ^[https://docs.github.com/en/get-started/quickstart/fork-a-repo]. That person makes changes to their copy of your code and then can submit a *Pull Request* to propose changes to your code. Pull Requests can be useful to allow people outside your team to contribute code without them having direct write access to your code. Merging code from a Pull Request is completely optional ^[https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests].
 
->**Warning**
+>**Danger**
 >A personal GitHub account doesn't give you much control over what a collaborator can edit and potentially delete. Be very careful to grant access to only those people who you trust with your code. An Enterprise GitHub account gives the repository owner more control over who can edit parts of the code, but of course an Enterprise accounts costs a monthly subscription. I don't have an Enterprise account and you may not either, so we will proceed with caution on who we add as *collaborators* to each of our GitHub repos.
 
 For this workshop, we will be adding people as collaborators.

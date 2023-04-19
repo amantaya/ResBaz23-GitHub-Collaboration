@@ -39,9 +39,9 @@ Depending on how you initialized your git repo, you may need to tell git to trac
 I found this diagram very helpful to understand the differences between local branches and remote branches.
 
 ![](Attachments/upstream-1-1170x802.png)
-Credit: [^https://devconnected.com/how-to-set-upstream-branch-on-git/]
+Credit: DevConnected[^2]
 
-It can be somewhat confusing having a remote branch and local branch with the same name. Just remeber that you are most likely working with a local branch names `main` and then pushing your commands to the remote tracking branch also called `main`. Branching strategies for [DevOps](https://www.atlassian.com/devops) workflows are numerous and can be complicated [^https://www.bmc.com/blogs/devops-branching-strategies/].
+It can be somewhat confusing having a remote branch and local branch with the same name. Just remeber that you are most likely working with a local branch names `main` and then pushing your commands to the remote tracking branch also called `main`. Branching strategies for [DevOps](https://www.atlassian.com/devops) workflows are numerous and can be complicated [^3].
 
 I would recommend setting this up once and keep the names of the local and remote branches the same, and then not thinking about which is which again to save your brain from hurting (or at least mines does when I think about it for too long). Here we set the 'upstream' branch (the remote tracking branch) to `origin/main`.
 
@@ -51,7 +51,7 @@ git branch --set-upstream-to=origin/main main
 
 ![](Attachments/Pasted%20image%2020230417110356.png)
 
-Th `git branch -a` command can be useful to print out a list of branches both local and remote branches. The `-a` flag tells git to list all of the branches, both local and remote. Omitting the `-a` causes git to print only your local branches [^https://git-scm.com/docs/git-branch].
+Th `git branch -a` command can be useful to print out a list of branches both local and remote branches. The `-a` flag tells git to list all of the branches, both local and remote. Omitting the `-a` causes git to print only your local branches [^4].
 
 ```Shell
 git branch -a
@@ -96,7 +96,7 @@ What does that small green "A" ![](Attachments/Screenshot%202023-04-17%20at%204.
 
 ![](Attachments/Screenshot%202023-04-17%20at%204.18.51%20PM.png)
 
-Now we run the `git commit -m` command with an admittedly not very informative commit message. The `-m` flag and the `"added some R code"` is the commit title, sometimes called the commit message. Try to keep the commit title at about 50 characters but feel free to hit enter after the commit title and add a description to the commit, keeping every subsequent line around 72 characters (i.e. the 50/72 rule) [^https://dev.to/noelworden/improving-your-commit-message-with-the-50-72-rule-3g79].
+Now we run the `git commit -m` command with an admittedly not very informative commit message. The `-m` flag and the `"added some R code"` is the commit title, sometimes called the commit message. Try to keep the commit title at about 50 characters but feel free to hit enter after the commit title and add a description to the commit, keeping every subsequent line around 72 characters (i.e. the 50/72 rule) [^5].
 
 ```Shell
 git commit -m "added some R code"
@@ -130,9 +130,9 @@ There are two primary ways for someone other than yourself to interact with your
 
 The first way is by adding someone to your GitHub repo as a *Collaborator*. This is perhaps the most straightforward way to grant someone access to your repository.
 
-A *Collaborator* is someone with a GitHub account that you give permission to read and write access to your code on GitHub. You can add a collaborator to a Public or Private repository on GitHub [^https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository].
+A *Collaborator* is someone with a GitHub account that you give permission to read and write access to your code on GitHub. You can add a collaborator to a Public or Private repository on GitHub [^6].
 
-The second way is when someone *forks* your GitHub repo. A *fork* is when someone has their own entire copy of your repo, but doesn't have direct write access your repo [^https://docs.github.com/en/get-started/quickstart/fork-a-repo]. That person makes changes to their copy of your code and then can submit a *Pull Request* to propose changes to your code. Pull Requests can be useful to allow people outside your team to contribute code without them having direct write access to your code. Merging code from a Pull Request is completely optional [^https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests].
+The second way is when someone *forks* your GitHub repo. A *fork* is when someone has their own entire copy of your repo, but doesn't have direct write access your repo [^7]. That person makes changes to their copy of your code and then can submit a *Pull Request* to propose changes to your code. Pull Requests can be useful to allow people outside your team to contribute code without them having direct write access to your code. Merging code from a Pull Request is completely optional [^8].
 
 >**Warning**
 >
@@ -184,7 +184,7 @@ git clone https://github.com/amantaya/ResBaz23-GitHub-Collaboration.git
 
 >**Note**
 >
->`git clone` implicitly sets the `origin` remote automatically. [^https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes]
+>`git clone` implicitly sets the `origin` remote automatically. [^9]
 
 ...and then change your current directory to name of the repo
 
@@ -228,7 +228,7 @@ When you start working for the day, run either `git fetch` or `git pull` to retr
 >
 >The `git pull` command is actually two commands: `git fetch` and `git merge`, mean that `git pull` will fetch the code from GitHub (downloading the code) and merge the changes (if any) into your current code on your machine. If there are any merge conflicts, `git pull` will usually fail and print a warning message that the pull could not be completed due to a 'merge conflict'.
 
-A **merge conflict** is when the two people have changed the same line in the same file, or when one person has modified a file while the other person deleted the file. [^https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts]
+A **merge conflict** is when the two people have changed the same line in the same file, or when one person has modified a file while the other person deleted the file. [^10]
 
 >**Note**
 >
@@ -256,7 +256,7 @@ git pull
 
 Notice that git tells us what has changed, namely 2 files called `somecode.R` and `somemorecode.R`. Git also tells us that 7 lines of code were inserted into `somemorecode.R`.
 
-Also notice git tells us it used the *fast-forward* method of merging two branches. The fast-forward method is where your local branch has the commits from your collaborator added to your branch's commit history (in this case a branch is from each person and each person's branch is called main - yes, it get's confusing fast), and then git brings you to the most recent commit on your current the branch called the HEAD. [^https://blog.mergify.com/what-is-a-git-merge-fast-forward/]
+Also notice git tells us it used the *fast-forward* method of merging two branches. The fast-forward method is where your local branch has the commits from your collaborator added to your branch's commit history (in this case a branch is from each person and each person's branch is called main - yes, it get's confusing fast), and then git brings you to the most recent commit on your current the branch called the HEAD. [^11]
 
 ## Writing Code Collaboratively
 
@@ -266,21 +266,21 @@ When you write code collaboratively with another person, you do so *asynchronous
 
 Working asynchronously comes with freedom to work independently, but also comes at the cost of dealing with conflicting versions of files and their version histories.
 
-When git cannot automatically merge the different histories of the same file, then you have a *merge conflict* [^https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts]. Merge conflicts typically require human intervention to decide what parts of the code to keep.
+When git cannot automatically merge the different histories of the same file, then you have a *merge conflict* [^12]. Merge conflicts typically require human intervention to decide what parts of the code to keep.
 
-One strategy to avoid merge conflicts is by using a DevOps Branching Strategy [^https://www.bmc.com/blogs/devops-branching-strategies/]. This is a huge topic and the source of considerable debate.
+One strategy to avoid merge conflicts is by using a DevOps Branching Strategy [^13]. This is a huge topic and the source of considerable debate.
 
-For this workshop, we will use the relatively simple GitHub Flow branching strategy [^https://www.geeksforgeeks.org/git-flow-vs-github-flow/#].
+For this workshop, we will use the relatively simple GitHub Flow branching strategy [^14].
 
 ### The GitHub Flow Branching Strategy
 
-![](Attachments/GitHubFlow.png) Credit [^https://media.geeksforgeeks.org/wp-content/uploads/20220214111138/GitHubFlow.jpg]
+![](Attachments/GitHubFlow.png) Credit: GeeksforGeeks[^15]
 
 GitHub flow is a simple branching strategy where each person creates a new branch typically called `feature` for development. Once the code on the `feature` branch is ready to be integrated into the `main` branch, the person submits a *Pull Request* for others to review. During the pull request, others can discuss the proposed changes and make any necessary edits to the files. Once the pull request has been approved, the code from the `feature` branch is merged back into the `main` branch, and the feature branch is typically deleted.
 
 >**Note**
 >
-> I set up a branch protection rule to prevent users directly pushing commits to the `main` branch on GitHub. Branch prtoection rules can be helpful to ensure code is reviewed before it enters production [^https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches]
+> I set up a branch protection rule to prevent users directly pushing commits to the `main` branch on GitHub. Branch prtoection rules can be helpful to ensure code is reviewed before it enters production [^16]
 
 First we will create a new branch called `andrew/feature`. The `-c` flag creates a new branch called `andrew/feature` and the `git switch` command changes your current branch to this new branch.
 
@@ -367,7 +367,7 @@ You should now see on the main page for the repo a commit with "Merge pull reque
 
 Perhaps the hardest part in collaborating on code with Git/GitHub is when there are merge conflicts.
 
-When git cannot automatically merge the different histories of the same file, then you have a *merge conflict* [^https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts].
+When git cannot automatically merge the different histories of the same file, then you have a *merge conflict* [^17].
 
 ### Creating a Merge Conflict Example
 
@@ -476,3 +476,21 @@ Create new branches as needed with `git switch -c <branch_name>`.
 ## References
 
 [^1]: https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes
+[^2]: https://devconnected.com/how-to-set-upstream-branch-on-git/
+[^3]: https://www.bmc.com/blogs/devops-branching-strategies/
+[^4]: https://git-scm.com/docs/git-branch
+[^5]: https://dev.to/noelworden/improving-your-commit-message-with-the-50-72-rule-3g79
+[^6]: https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository
+[^7]: https://docs.github.com/en/get-started/quickstart/fork-a-repo
+[^8]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
+[^9]: https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes
+[^10]: https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts
+[^11]: https://blog.mergify.com/what-is-a-git-merge-fast-forward/
+[^12]: https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts
+[^13]: https://www.bmc.com/blogs/devops-branching-strategies/
+[^14]: https://www.geeksforgeeks.org/git-flow-vs-github-flow/#
+[^15]: https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches
+[^16]: https://media.geeksforgeeks.org/wp-content/uploads/20220214111138/GitHubFlow.jpg
+[^17]: https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts
+
+

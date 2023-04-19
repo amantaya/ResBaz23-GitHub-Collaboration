@@ -15,5 +15,5 @@ plot(petal_length, petal_width)
 # have the other person change this line to pch = 1 and col = "red"
 plot(petal_length, petal_width, pch = 2, col = "purple")
 
-# view a historgram of petal width
+# view a histogram of petal length
 hist(petal_length)

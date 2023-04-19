@@ -65,7 +65,7 @@ Next, let's create a new file called `somecode.R` and try pushing that code to G
 touch somecode.R
 ```
 
->[!Help]
+>**Note**
 >The `touch` command does not work in PowerShell. Be sure to use a different shell, such as Bash or Zsh.
 >![](Attachments/Pasted%20image%2020230417192246.png)
 
@@ -164,7 +164,7 @@ You can check who has access to your repository by checking that *Collaborators*
 
 In R Studio, open the **terminal** (not the R console). The **terminal** runs a shell of the operating system, allowing the user to interface with the operating system through a command line interface.
 
->[!Help]
+>**Note**
 >Shells can come in many different types, such as Zsh (MacOS), bash (Linux) or PowerShell (Windows). These shells are not mutually exclusive, you can have multiple shells on single computer.
 
 In the example below, we are using bash to run these commands. I highly recommend downloading [git bash](https://git-scm.com/downloads) especially if you are a Windows user, as some of these commands might not work in PowerShell.

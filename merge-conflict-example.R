@@ -13,7 +13,7 @@ petal_width <- iris$Petal.Width
 plot(petal_length, petal_width)
 
 # simple plot of petal width
-plot(petal_length, petal_width, pch = 1, col = "red")
+plot(petal_length, petal_width, pch = 2, col = "red")
 
 # view a histogram of petal length
 hist(petal_length)

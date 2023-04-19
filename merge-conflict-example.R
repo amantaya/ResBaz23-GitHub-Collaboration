@@ -12,7 +12,7 @@ petal_width <- iris$Petal.Width
 
 plot(petal_length, petal_width)
 
-# have the other person change this line to pch = 1 and col = "red"
+# simple plot of petal width
 plot(petal_length, petal_width, pch = 2, col = "purple")
 
 # add a linear model

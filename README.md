@@ -133,7 +133,7 @@ A *Collaborator* is someone with a GitHub account that you give permission to re
 
 The second way is when someone *forks* your GitHub repo. A *fork* is when someone has their own entire copy of your repo, but doesn't have direct write access your repo ^[https://docs.github.com/en/get-started/quickstart/fork-a-repo]. That person makes changes to their copy of your code and then can submit a *Pull Request* to propose changes to your code. Pull Requests can be useful to allow people outside your team to contribute code without them having direct write access to your code. Merging code from a Pull Request is completely optional ^[https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests].
 
->[!Important]
+>**Warning**
 >A personal GitHub account doesn't give you much control over what a collaborator can edit and potentially delete. Be very careful to grant access to only those people who you trust with your code. An Enterprise GitHub account gives the repository owner more control over who can edit parts of the code, but of course an Enterprise accounts costs a monthly subscription. I don't have an Enterprise account and you may not either, so we will proceed with caution on who we add as *collaborators* to each of our GitHub repos.
 
 For this workshop, we will be adding people as collaborators.
@@ -227,7 +227,7 @@ A **merge conflict** is when the two people have changed the same line in the sa
 >**Note**
 > You can set your `git config --global pull.rebase true` options to automatically rebase the git repo, rewriting the repo's history on your copy of the git repo when a `git pull` command returns a merge conflict. I would generally not recommend setting this option to `true` unless you are experienced with git and understand how a 'rebase' will affect your git history.
 
->[!Important]
+>**Warning**
 >If your collaborator is working on the code synchronously (at the same time as you), have each collaborator run `git push` and then `git pull` frequently to synchronize the changes in code. This will also help detect merge conflicts early before they become big problems.
 
 Running `git fetch` retrieves the references from the remote, in our case the remote is GitHub. References are what git uses to track the changes to each file and uses to keep a version history for each file. `git fetch` ***does not*** automatically try to merge the changes.
@@ -444,7 +444,7 @@ Notice that we deleted the linear model on lines 21-24 and kept the histogram.
 
 There is helpful video on dealing with merge conflicts in R [here](https://youtu.be/97m0N4zIvOs)
 
->[!Important]
+>**Warning**
 >Git will tell you where the merge conflicts are, but you and your collaborators will have to decide what code to keep.
 
 >[!Pro Tip]
